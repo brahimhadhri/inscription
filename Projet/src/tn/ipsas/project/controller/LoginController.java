@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import tn.ipsas.project.Bean.LoginBean;
+
 /**
  * Servlet implementation class LoginController
  */
@@ -36,7 +38,11 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String nom = request.getParameter("email")  ; 
-		String motPasse= request.getParameter("pass") ;
+		String motPasse= request.getParameter("pass") ; 
+		LoginBean login = new LoginBean() ;
+		login.setNom(nom);
+		login.setMotPasse(motPasse);
+				
 	}
 
 }
